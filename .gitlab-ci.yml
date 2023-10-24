@@ -1,0 +1,12 @@
+stages:
+- docker
+
+Compile with Docker:
+ stage: docker
+ script:
+ - DOCKER_BUILDKIT=1 docker build -o . .
+ artifacts: 
+  paths:
+  - hacks_hash.ini
+  expire_in: 1 week
+
